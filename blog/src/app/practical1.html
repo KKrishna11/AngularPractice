@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myController">
+
+        <h1>
+            {{name}}
+        </h1>
+        
+        <input ng-model="valueappear">
+        
+        <p>
+            {{valueappear}}
+        </p>
+
+
+            <h6 ng-init="firstname='IM ng-init'"></h6>
+            <p><span ng-bind="firstname" style="background-color: lightblue;"></span></p>
+
+            <p ng-init="quantity=1;cost=5"></p>
+            <h1>Total In dollar is {{quantity*cost}}</h1>
+
+
+            <p ng-init="person={pokemon:'lol',age:19}"></p>
+            <h1>{{person.pokemon}}</h1>
+
+            <h6>this is array and the expression was called </h6>
+            <p ng-init="points=[1,15,19,2,40]"></p>
+            <h1>{{points[2]}}</h1>
+
+        
+            <label for="quantity">
+                quantity  :
+            </label>
+            <input type="number" ng-model="quantity">
+            <br>
+
+            <label for="quantity" >
+                Costs :
+            </label>
+            
+            <input type="number" ng-model="price">
+
+             <h1> total cost in dost is quantity * price={{quantity*price}}</h1>
+
+            
+            <p ng-init="points=[1,15,19,2,40]"></p>
+            <ul>
+                <li ng-repeat="x in points">{{x}}</li>
+            </ul>
+
+            <!-- <h5 TestDirective></h5> -->
+            
+            <!-- The ng-app directive initializes an AngularJS application. -->
+<!-- 
+            The ng-init directive initializes application data.
+
+            The ng-model directive binds the value of HTML controls (input, select, textarea) to application data. -->
+
+
+    </div>
+
+    <!-- <div ng-app="">
+    
+        <p>Name:   <input type="text" ng-model="naam"> </p>
+        AngularJS expressions can be written inside double braces: {{ expression }}.
+
+            AngularJS expressions can also be written inside a directive: ng-bind="expression".
+
+        <p ng-bind="naam"></p>
+    
+
+    </div> -->
+
+<script>
+
+        var app=angular.module("myApp",[])
+        app.controller("myController",function($scope){
+            $scope.name="Krishna"
+        })
+
+        // app.directive("TestDirective",function(){
+        //     return{
+        //         template: " was made in directive constructor "
+        //     }
+        // })
+    
+    </script>
+</body>
+</html>
